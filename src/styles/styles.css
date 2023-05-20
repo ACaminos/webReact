@@ -1,0 +1,26 @@
+/* Dropdown Navbar */
+.dropdown-menu{
+    background-color: #212529!important;
+    color: #fff!important;
+    border-color: #8a76fc!important;
+}
+
+.dropdown-menu a{
+    color:#fff!important;
+}
+
+.dropdown-menu a:hover{
+    color:#8a76fc!important;
+    background-color: #33383e!important;
+}
+
+.dropdown-menu hr{
+    border-color: #8a76fc!important;
+}
+/* Dropdown Navbar */
+
+
+h1.titleListContainer{
+    color: #fff;
+    background-color: #212529;
+}
