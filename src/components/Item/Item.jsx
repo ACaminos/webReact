@@ -1,13 +1,22 @@
+//Components
+import { ItemCount } from "../itemCount/ItemCount"
 
-const Item = ( {id, name, img, price, stock } ) => {
+//Styles
+import './item.css'
+
+const Item = ( { title, price, description, image, stock } ) => {
     return(
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <>
+            <div className="card">
+                <img src={image} className="card-img-top" alt={title} />
+                <div className="card-body">
+                    <h6 className="card-title">{title}</h6>
+                    {/* <p className="card-text">{description}</p> */}
+                    <ItemCount initial={0} stock={stock} />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
+
+export default Item

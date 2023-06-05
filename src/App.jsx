@@ -11,8 +11,7 @@ function App() {
   return (
     <>
       <HeaderNav/>
-      <ItemListContainer greeting={'Lorem Ipsum'} />
-      <ItemCount initial={0} stock={10}/>
+      <ItemListContainer />
     </>
   )
 }

@@ -1,0 +1,21 @@
+.card{
+    height: 100%;
+    width: 18rem;
+    border: 1px solid gray;
+}
+
+img.card-img-top{
+    width: 60%;
+    height: 45%;
+    display: flex;
+    align-self: center;
+    padding: 10px;
+}
+
+h6{
+    font-weight: bold;
+}
+
+.card-title{
+    margin: 10px 0px 20px 0px;
+}
