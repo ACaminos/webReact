@@ -12,18 +12,15 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <HeaderNav/>
-      <Routes>
-        <Route path='/' element={ <ItemListContainer />  } />
-        <Route path='/category/:categoyId' element={  <ItemListContainer /> } />
-        <Route path='/item/:itemId' element={ <ItemDetailContainer />  } />
-        <Route path='*' element={ <h2>404 NOT FOUND</h2>} />
-
-      </Routes>
-
-    </BrowserRouter>
-      <ItemListContainer />
+      <BrowserRouter>
+        <HeaderNav/>
+        <Routes>
+          <Route path='/' element={ <ItemListContainer />  } />
+          <Route path='/category/:categoryId' element={  <ItemListContainer /> } />
+          <Route path='/item/:itemId' element={ <ItemDetailContainer />  } />
+          <Route path='*' element={ <h2>404 NOT FOUND</h2>} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

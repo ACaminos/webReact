@@ -1,4 +1,3 @@
-import React from 'react'
 import { ItemCount } from '../itemCount/ItemCount'
 
 const ItemDetail = ({ id, title, price, category, description, image, stock }) => {
@@ -19,7 +18,7 @@ const ItemDetail = ({ id, title, price, category, description, image, stock }) =
             <a href="#" class="card-link">Stock: &nbsp; {stock}</a>
         </div>
         <div class="card-footer text-muted">
-            <ItemCount initial={1} stock={stock} onAdd={ (cantidad) => console.log('Cantidad agregada')} />
+            <ItemCount initial={1} stock={stock} />
         </div>
     </div>
     </>

@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
       .catch(err => {
         console.error(err)
       })
-    }, [third])
+    }, [itemId])
     
   return (
     <>
