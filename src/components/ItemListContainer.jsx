@@ -13,16 +13,16 @@ export const ItemListContainer = ( {greeting} ) => {
   const { categoryId } = useParams()
 
   useEffect( () => {
-    // const asyncFunction = categoryId ? getProductsByCategory : getProducts
+    const asyncFunction = categoryId ? getProductsByCategory : getProducts
 
-    getProducts()
+    asyncFunction(categoryId)
       .then(res => {
         setProductos(res)
       })
       .catch(err => {
         console.error(err)
       })
-  },[])
+  },[categoryId])
 
   console.log(productos, 'itemListContainer')
 
