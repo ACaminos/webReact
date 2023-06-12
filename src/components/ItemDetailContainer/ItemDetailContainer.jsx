@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getProductById } from '../mock/mockData'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
@@ -15,14 +15,15 @@ const ItemDetailContainer = () => {
         setProduct(res)
       })
       .catch(err => {
-        console.error(err)
+        console.log(err)
       })
     }, [itemId])
     
-    console.log(itemId, 'que onda')
-    console.log(product, 'setProduct')
+    console.log(itemId, 'este es el itemId')
+    console.log(setProduct, 'setProduct')
   return (
     <>
+        <h1>Detalle del producto</h1>
         <ItemDetail {...product} />
     </>
   )

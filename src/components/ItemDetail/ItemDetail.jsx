@@ -18,7 +18,7 @@ const ItemDetail = ({ id, title, price, category, description, image, stock }) =
                 <a href="#" className="card-link">Stock: &nbsp; {stock}</a>
             </div>
             <div className="card-footer text-muted">
-                <ItemCount initial={1} stock={stock} />
+                {/* <ItemCount initial={1} stock={stock} /> */}
             </div>
         </div>
     </>

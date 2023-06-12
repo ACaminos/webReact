@@ -15,8 +15,8 @@ function App() {
         <HeaderNav/>
         <Routes>
           <Route path='/' element={ <ItemListContainer />  } />
-          <Route path='/category/:categoryId' element={  <ItemListContainer /> } />
-          <Route path='/item/:itemId' element={ <ItemDetailContainer />  } />
+          <Route path='/category/:categoryId' element={  <ItemListContainer greeting={"Listado de productos"} /> } />
+          <Route path='/item/:itemId' element={ <ItemDetailContainer greeting={"Listado de productos filtrados"} />  } />
           <Route path='*' element={ <h2>404 NOT FOUND</h2>} />
         </Routes>
       </BrowserRouter>

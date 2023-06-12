@@ -6,23 +6,18 @@ import { ItemCount } from "../itemCount/ItemCount"
 import './item.css'
 
 const Item = ( { id, title, price, category, image, stock } ) => {
-    const navigate = useNavigate()
-
-    const handleClick = (e) => {
-        e.stopPropagation()
-        console.log('item')
-    }
+    // const navigate = useNavigate()
 
     return(
         <>
-            <div className="card" onClick={handleClick}>
+            <div className="card">
                 <img src={image} className="card-img-top" alt={title} />
                 <div className="card-body">
                     <blockquote>{category}</blockquote>
                     <h6 className="card-title">{title}</h6>
                     <div className="row stockData">
                         <div className="col-6">
-                            <p className="card-text" style={{textAlign:'left'}}>Stock disp: {stock}</p>
+                            <p className="card-text" style={{textAlign:'left'}}>Stock: {stock}u</p>
                         </div>
                         <div className="col-6">
                             <p className="card-text" style={{textAlign:'right'}}>U$S {price}</p>

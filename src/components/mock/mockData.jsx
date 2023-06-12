@@ -190,10 +190,10 @@ const data = [
     } )
   }
 
-  export const getProductById = (productId) => {
+  export const getProductById = (id) => {
     return new Promise( (res) => {
       setTimeout(() => {
-        res(data.find(prod => prod.id === productId))
+        res(data.find(data => data.id === id))
       }, 500);
     })
   }
@@ -201,7 +201,7 @@ const data = [
   export const getProductsByCategory = (categoryId) => {
     return new Promise( (res) => {
       setTimeout(() => {
-        res(data.find(prod => prod.category === categoryId))
+        res(data.filter(data => data.category === categoryId))
       }, 500);
     })
   }
