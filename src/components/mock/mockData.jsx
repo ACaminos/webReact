@@ -193,7 +193,7 @@ const data = [
   export const getProductById = (id) => {
     return new Promise( (res) => {
       setTimeout(() => {
-        res(data.find(data => data.id === id))
+        res(data.find(data => data.id === parseInt(id)))
       }, 500);
     })
   }

@@ -6,19 +6,25 @@ const ItemDetail = ({ id, title, price, category, description, image, stock }) =
         <div className="card" style={{width:'18rem'}}>
             <img src={image} className="card-img-top" alt={title} />
             <div className="card-body">
-                <h5 className="card-title">{category}</h5>
-                <p className="card-text">{title}</p>
+                <h4 className="card-title">{category}</h4>
+                <h6 className="card-text" style={{textAlign:'left',}}>{title}</h6>
             </div>
-            <ul className="list-group list-group-flush">
-                <li className="list-group-item">Description</li>
+            <ul className="list-group list-group-flush" style={{padding:'0px 10px 0px 10px'}}>
+                <li className="list-group-item" style={{fontWeight:'bold'}}>Description</li>
                 <li className="list-group-item">{description}</li>
             </ul>
             <div className="card-body">
-                <a href="#" className="card-link">Price: &nbsp; {price}</a>
-                <a href="#" className="card-link">Stock: &nbsp; {stock}</a>
+                <div className='row' style={{marginBottom:'10px'}}>
+                    <div className='col-7'>
+                        <p className="card-link"><b>Price:</b> &nbsp; {price}</p>
+                    </div>
+                    <div className='col-5'>
+                        <p className="card-link"><b>Stock:</b> &nbsp; {stock}</p>
+                    </div>
+                </div>
             </div>
-            <div className="card-footer text-muted">
-                {/* <ItemCount initial={1} stock={stock} /> */}
+            <div className="Cardfooter" style={{padding:'0px 0px 20px 0px'}}>
+                <ItemCount initial={1} stock={stock} />
             </div>
         </div>
     </>
