@@ -19,6 +19,8 @@ const ItemDetailContainer = () => {
       })
     }, [itemId])
     
+    console.log(itemId, 'que onda')
+    console.log(product, 'setProduct')
   return (
     <>
         <ItemDetail {...product} />

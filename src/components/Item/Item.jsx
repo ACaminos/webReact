@@ -1,14 +1,21 @@
 //Components
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { ItemCount } from "../itemCount/ItemCount"
 
 //Styles
 import './item.css'
 
 const Item = ( { id, title, price, category, image, stock } ) => {
+    const navigate = useNavigate()
+
+    const handleClick = (e) => {
+        e.stopPropagation()
+        console.log('item')
+    }
+
     return(
         <>
-            <div className="card">
+            <div className="card" onClick={handleClick}>
                 <img src={image} className="card-img-top" alt={title} />
                 <div className="card-body">
                     <blockquote>{category}</blockquote>

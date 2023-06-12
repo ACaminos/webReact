@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //Components
 import { HeaderNav } from './components/HeaderNav'
 import { ItemListContainer } from './components/ItemListContainer';
-import { ItemCount } from './components/itemCount/ItemCount';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 

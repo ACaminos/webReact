@@ -198,10 +198,10 @@ const data = [
     })
   }
 
-  export const getProductsByCategory = (productCategory) => {
+  export const getProductsByCategory = (categoryId) => {
     return new Promise( (res) => {
       setTimeout(() => {
-        res(data.find(prod => prod.category === productCategory))
+        res(data.find(prod => prod.category === categoryId))
       }, 500);
     })
   }
