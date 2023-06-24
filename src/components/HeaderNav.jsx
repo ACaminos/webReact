@@ -44,8 +44,7 @@ import '../styles/styles.css'
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link>
               <CardWidget/>
             </Nav.Link>
           </Nav>

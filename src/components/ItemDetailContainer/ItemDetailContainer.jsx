@@ -18,9 +18,7 @@ const ItemDetailContainer = () => {
         console.log(err)
       })
     }, [itemId])
-    
-    console.log(itemId, 'este es el itemId')
-    console.log(setProduct, 'setProduct')
+
   return (
     <>
         <h1>Detalle del producto</h1>
