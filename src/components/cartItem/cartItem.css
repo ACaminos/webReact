@@ -1,10 +1,35 @@
-h5{
-    color: #ffff;
-    font-weight: 800;
-    font-size: 20px;
+.container{
+    background-color: #212529;
+    padding: 0!important;
 }
 
-p{
-    color: #ffff;
-    font-size: 15px;
+.laCard{
+    background-color: #f5f5f5;
+    margin-top: 0!important;
+    border-bottom: 1px solid gray;
+    padding: 10px!important;
+}
+
+img{
+    margin: 10px;
+}
+
+.description{
+    padding: 15px 15px;
+}
+
+.stock{
+    color: black;
+    margin-right: 30px;
+}
+
+.price{
+
+}
+
+span.spec{
+    font-weight: bold;
+    color: black;
+    text-transform: capitalize;
+
 }

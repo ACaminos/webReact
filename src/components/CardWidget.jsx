@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 export const CardWidget = () => {
-  const { totalQuantity } = useContext(CartContext)
+  const { totalQuantity } = useCart()
   console.log(totalQuantity, 'total quantityy')
+
   return (
     <Link to='/cart' style={ { display: totalQuantity > 0 ? 'block' : 'none' } }>
       <button type="button" className="btn btn-dark btn-sm position-relative">

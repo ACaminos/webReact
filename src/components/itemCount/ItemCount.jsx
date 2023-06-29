@@ -3,7 +3,6 @@ import '../itemCount/itemCountcss.css'
 
 export const ItemCount = ( { stock, initial, onAdd } ) => {
   const [quantity, setQuantity] = useState(initial)
-  const [guardado, setGuardado] = useState()
 
   const addition = () => {
     if( quantity < stock ){

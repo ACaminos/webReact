@@ -1,6 +1,5 @@
 //Components
 import { Link, useNavigate } from "react-router-dom"
-import { ItemCount } from "../itemCount/ItemCount"
 
 //Styles
 import './item.css'
