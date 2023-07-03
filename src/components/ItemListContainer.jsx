@@ -1,11 +1,11 @@
 //Imports
 import { useEffect, useState } from 'react'
-import { getProducts, getProductsByCategory } from './mock/mockData'
+// import { getProducts, getProductsByCategory } from './mock/mockData'
 import { useParams } from 'react-router-dom'
 import ItemList from './itemList/ItemList'
 
 //Firebase
-import { getDocs, collection, query, where } from "firebase/firestore"
+import { getDocs, collection, query, where, QuerySnapshot } from "firebase/firestore"
 import { db } from '../service/firebase/firebaseConfig'
 
 //Styles
@@ -18,30 +18,23 @@ export const ItemListContainer = ( {greeting} ) => {
   const { categoryId } = useParams()
 
   useEffect( () => {
+    const productRef = collection(db, 'products')
+
     setLoading(true)
 
-    const collectionRef = categoryId ?
-        query(collection(db, 'items'), where('category', '==', categoryId))
-        :
-        collection(db, 'products')
+    getDocs(productRef)
 
-        getDocs(collectionRef)
-        .then(response => {
-          const productsAdapted = response.docs.map(doc => {
-            const data = doc.data()
-            return { id: doc.id, ...data }
-          })
-          setProductos(productsAdapted)
+      .then(querySnapshot => {
+        const productsAdapted = querySnapshot.docs.map(doc => {
+          const fields = doc.data()
+          console.log(fields)
+          return{ id: doc.id, ...fields }
         })
-        .catch(err => (
-          console.log(err)
-        ))
-        .finally( () => {
-          setLoading(false)
-        })
+        setProductos( productsAdapted )
+      })
+
+      .finally( () => { setLoading(false) } )
       },[categoryId])
-
-
 
 
       // ------------ Sin Firebase -----------------
@@ -49,7 +42,7 @@ export const ItemListContainer = ( {greeting} ) => {
   //   asyncFunction(categoryId)
   //     .then(res => {
   //       setProductos(res)
-  //     })
+  //     }) 
   //     .catch(err => {
   //       console.error(err)
   //     })

@@ -15,28 +15,24 @@ import { db } from '../../service/firebase/firebaseConfig'
 
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [product, setProduct] = useState( null )
+    const [loading, setLoading] = useState( true )
 
     const { itemId } = useParams()
 
 
-    useEffect(() => {
-      setLoading(true)
-      const docRef = doc( db, 'products', itemId )
+    useEffect(  () => {
+      const productRef = doc( db, 'products', itemId  )
 
-      getDoc(docRef)
-      .then( res => {
-        const data = response.data()
-        const productAdapted = { id: res.id, ...data }
-        setProduct(productAdapted)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-      .finally( () => {
-        setLoading(false)
-      })
+      getDoc(productRef)
+        .then(  querySnapshot => {
+          console.log(querySnapshot)
+          const fields = querySnapshot.data()
+          const productAdapted = { id: querySnapshot.id, ...fields }
+
+          setProduct(productAdapted)
+        })
+        .finally( setLoading( false ) )
     }, [itemId])
 
 
