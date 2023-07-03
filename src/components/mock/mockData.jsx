@@ -1,7 +1,7 @@
 const data = [
   {
     "id": 1,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "Fjallraven - Foldsack No. 1 Backpack",
     "price": 109.95,
     "category": "men",
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -73,7 +73,7 @@ const data = [
   },
   {
     "id": 9,
-    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
     "price": 64,
     "category": "electronics",
     "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",

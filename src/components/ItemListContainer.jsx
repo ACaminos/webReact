@@ -18,7 +18,7 @@ export const ItemListContainer = ( {greeting} ) => {
   const { categoryId } = useParams()
 
   useEffect( () => {
-    const productRef = collection(db, 'products')
+    const productRef = !categoryId ? collection(db, 'products') : query(collection(db, 'products'), where('category', '==', categoryId))
 
     setLoading(true)
 
@@ -42,7 +42,7 @@ export const ItemListContainer = ( {greeting} ) => {
   //   asyncFunction(categoryId)
   //     .then(res => {
   //       setProductos(res)
-  //     }) 
+  //     })
   //     .catch(err => {
   //       console.error(err)
   //     })
