@@ -1,23 +1,57 @@
 import { useEffect, useState } from 'react'
-import { getProductById } from '../mock/mockData'
-import { useParams } from 'react-router-dom'
+
+//Component
 import ItemDetail from '../ItemDetail/ItemDetail'
+
+//Router Dom
+import { useParams } from 'react-router-dom'
+
+//Mock Data
+import { getProductById } from '../mock/mockData'
+
+//Firebase
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '../../service/firebase/firebaseConfig'
+
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     const { itemId } = useParams()
 
 
     useEffect(() => {
-      getProductById(itemId)
-      .then(res => {
-        setProduct(res)
+      setLoading(true)
+      const docRef = doc( db, 'products', itemId )
+
+      getDoc(docRef)
+      .then( res => {
+        const data = response.data()
+        const productAdapted = { id: res.id, ...data }
+        setProduct(productAdapted)
       })
       .catch(err => {
         console.log(err)
       })
+      .finally( () => {
+        setLoading(false)
+      })
     }, [itemId])
+
+
+    //   getProductById(itemId)
+    //   .then(res => {
+    //     setProduct(res)
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
+    // }, [itemId])
+
+    if(loading) {
+      return <h1>Loading...</h1>
+  }
 
   return (
     <>
