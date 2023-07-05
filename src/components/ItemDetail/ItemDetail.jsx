@@ -2,11 +2,13 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ItemCount } from '../itemCount/ItemCount'
 import { Link } from 'react-router-dom'
+import { useNotification } from '../notification/NotificationService'
 
 const ItemDetail = ( { id, title, price, category, description, image, stock } ) => {
     const [ quantityAdd, setQuantityAdd ] = useState(0)
 
     const { addItem } = useContext(CartContext)
+    const {setNotification} = useNotification()
 
     const handleQuantity = ( quantity ) => {
         setQuantityAdd( quantity )
@@ -15,7 +17,8 @@ const ItemDetail = ( { id, title, price, category, description, image, stock } )
             id, title, price, image, stock, category, quantity
         }
 
-        addItem( item, quantity )
+        addItem( item )
+        setNotification('error', `Se agrego correctamente ${quantity} ${title} al carrito`, 5)
     }
 
     console.log(quantityAdd, 'quantity add')
@@ -45,7 +48,7 @@ const ItemDetail = ( { id, title, price, category, description, image, stock } )
             <div className="Cardfooter" style={ { padding:'0px 0px 20px 0px' } }>
                 {
                     quantityAdd > 0 ? (  <Link to='/cart' style={{textDecoration:'none'}}>
-                                            <button type="button" class="btn btn-sm btn-success w-100" style={{borderRadius:'0'}}>Finalizar compra</button>
+                                            <button type="button" className="btn btn-sm btn-success w-100" style={{borderRadius:'0'}}>Finalizar compra</button>
                                         </Link>
                                       )
                         :
