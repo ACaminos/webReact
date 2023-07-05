@@ -17,7 +17,7 @@ const ItemDetail = ( { id, title, price, category, description, image, stock } )
             id, title, price, image, stock, category, quantity
         }
 
-        addItem( item )
+        addItem( item, quantity )
         setNotification('error', `Se agrego correctamente ${quantity} ${title} al carrito`, 5)
     }
 

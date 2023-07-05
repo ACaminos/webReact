@@ -5,6 +5,7 @@ import { useNotification } from '../notification/NotificationService'
 import { useNavigate } from 'react-router-dom'
 
 import { db } from "../../service/firebase/firebaseConfig"
+import { useForm } from 'react-hook-form'
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
@@ -12,15 +13,17 @@ const Checkout = () => {
 
     const navigate = useNavigate()
 
+    const { register, handleSubmit, errors } = useForm();
+
     const { setNotification } = useNotification()
 
     const createOrder = async() => {
 
     const objOrder = {
         buyer: {
-            name: "Pepe lolo",
-            phone: '12345678',
-            email: 'hola@hola.com.ar'
+            name: data.nombre,
+            phone: data.telefono,
+            email: data.email
         },
         items: cart,
         total: total
@@ -79,9 +82,41 @@ const Checkout = () => {
   }
   return (
     <>
-            <h1 style={{color:'white'}}>Checkout</h1>
-            <h2 style={{color:'white'}}>Formulario</h2>
-            <button onClick={createOrder}>Generar orden de compra</button>
+      <h1 style={{ color: 'white' }}>Checkout</h1>
+      <h2 style={{ color: 'white' }}>Formulario</h2>
+      <form onSubmit={handleSubmit(createOrder)}>
+        <div>
+          <label>Nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            ref={register({ required: true })}
+          />
+          {errors.nombre && <span>El nombre es requerido</span>}
+        </div>
+
+        <div>
+          <label>Teléfono:</label>
+          <input
+            type="text"
+            name="telefono"
+            ref={register({ required: true, pattern: /^[0-9]+$/ })}
+          />
+          {errors.telefono && <span>El teléfono es requerido y debe ser numérico</span>}
+        </div>
+
+        <div>
+          <label>Email:</label>
+          <input
+            type="text"
+            name="email"
+            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+          {errors.email && <span>El correo electrónico es requerido y debe ser válido</span>}
+        </div>
+
+        <button type="submit">Generar orden de compra</button>
+      </form>
     </>
   )
 }
