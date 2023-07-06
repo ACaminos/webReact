@@ -13,11 +13,11 @@ const Checkout = () => {
 
     const navigate = useNavigate()
 
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const { setNotification } = useNotification()
 
-    const createOrder = async() => {
+    const createOrder = async(data) => {
 
     const objOrder = {
         buyer: {
@@ -72,7 +72,7 @@ const Checkout = () => {
     }
     catch(err){ setNotification('error', '¡Cuidado!, ¡hubo un error en la generacion de la orden!') }
 
-    finally{  setLoading(false) }
+    finally{ setLoading(false) }
   }
 
   if(loading){
@@ -82,37 +82,25 @@ const Checkout = () => {
   }
   return (
     <>
-      <h1 style={{ color: 'white' }}>Checkout</h1>
-      <h2 style={{ color: 'white' }}>Formulario</h2>
-      <form onSubmit={handleSubmit(createOrder)}>
+      <h1 style={ { color: 'white' } }>Checkout</h1>
+      <h2 style={ { color: 'white' } }>Formulario</h2>
+      <form onSubmit={ handleSubmit( createOrder ) }>
         <div>
-          <label>Nombre:</label>
-          <input
-            type="text"
-            name="nombre"
-            ref={register({ required: true })}
-          />
-          {errors.nombre && <span>El nombre es requerido</span>}
+          <label style={ { color:'white' } }>Nombre:</label>
+          <input type="text" { ...register( "nombre", { required: true }) } />
+          {/* { errors.nombre && <span style={ { color:'white' } }>El nombre es requerido</span> } */}
         </div>
 
         <div>
-          <label>Teléfono:</label>
-          <input
-            type="text"
-            name="telefono"
-            ref={register({ required: true, pattern: /^[0-9]+$/ })}
-          />
-          {errors.telefono && <span>El teléfono es requerido y debe ser numérico</span>}
+          <label style={ { color:'white' } }>Teléfono:</label>
+          <input type="number" { ...register( "telefono",{ required: true, pattern: /^[0-9]+$/ } ) } />
+          {/* { errors.telefono && <span style={ { color:'white' } }>El teléfono es requerido y debe ser numérico</span> } */}
         </div>
 
         <div>
-          <label>Email:</label>
-          <input
-            type="text"
-            name="email"
-            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-          />
-          {errors.email && <span>El correo electrónico es requerido y debe ser válido</span>}
+          <label style={ { color:'white' } }>Email:</label>
+          <input type="text" { ...register( "email",{ required: true, pattern: /^\S+@\S+$/i } ) } />
+          {/* { errors.email && <span style={ { color:'white' } }>El correo electrónico es requerido y debe ser válido</span> } */}
         </div>
 
         <button type="submit">Generar orden de compra</button>
