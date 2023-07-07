@@ -16,8 +16,7 @@ const Cart = () => {
             <>
                 <div className='container'>
                     <h1 style={ { color:'white' } }>No hay productos en el carrito</h1>
-                    <button className='btn btn-sm btn-primary mt-5 px-5'><Link to='/'>Ir a productos</Link></button>
-
+                    <Link className="btn btn-sm btn-primary mt-5 px-5" to='/'>Ir a productos</Link>
                 </div>
             </>
         )
@@ -32,8 +31,8 @@ const Cart = () => {
                 <h3 style={{color:'white'}}>Total: u$s {getTotal}</h3>
             </div>
             <div className='col-sm-6 colDer'>
-                <button className='btn btn-sm btn-danger btnClean' onClick={ () => clearCart() }>Limpiar carrito</button>
-                <button className='btn btn-sm btn-primary btnCheck'><Link to='/checkout'>Checkout</Link></button>
+                <button className="btn btn-danger btnClean" onClick={ () => clearCart() }>Limpiar carrito</button>
+                <Link className="btn btn-sm btn-primary btnCheck" to='/checkout'>Checkout</Link>
             </div>
         </div>
     </div>
