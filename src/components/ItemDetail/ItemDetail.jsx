@@ -1,8 +1,15 @@
 import { useContext, useState } from 'react'
-import { CartContext } from '../../context/CartContext'
+
+//Components
 import { ItemCount } from '../itemCount/ItemCount'
-import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 import { useNotification } from '../notification/NotificationService'
+
+//Packages
+import { Link } from 'react-router-dom'
+
+//Styles
+import './ItemDetail.css'
 
 const ItemDetail = ( { id, title, price, category, description, image, stock } ) => {
     const [ quantityAdd, setQuantityAdd ] = useState(0)
@@ -25,18 +32,18 @@ const ItemDetail = ( { id, title, price, category, description, image, stock } )
 
   return (
     <>
-        <div className="card" style={ { width:'18rem' } }>
-            <img src={ image } className="card-img-top" alt={ title } />
+        <div className="card" style={ { width:'30rem' } }>
+            <img src={ image } className="card-img-top" id='queOnda' alt={ title } />
             <div className="card-body">
                 <h4 className="card-title">{ category }</h4>
-                <h6 className="card-text" style={ { textAlign:'left' } }>{ title }</h6>
+                <h6 className="card-text cardTextTitle">{ title }</h6>
             </div>
-            <ul className="list-group list-group-flush" style={ { padding:'0px 10px 0px 10px' } }>
-                <li className="list-group-item" style={ { fontWeight:'bold' } }>Description</li>
-                <li className="list-group-item">{ description }</li>
+            <ul className="list-group list-group-flush listGroupPadding">
+                <li className="list-group-item descriptionTitle">Description</li>
+                <li className="list-group-item descriptionContent">{ description }</li>
             </ul>
             <div className="card-body">
-                <div className='row' style={ { marginBottom:'10px' } }>
+                <div className='row RowMargin'>
                     <div className='col-7'>
                         <p className="card-link"><b>Price:</b> &nbsp; { price }</p>
                     </div>
@@ -45,7 +52,7 @@ const ItemDetail = ( { id, title, price, category, description, image, stock } )
                     </div>
                 </div>
             </div>
-            <div className="Cardfooter" style={ { padding:'0px 0px 20px 0px' } }>
+            <div className="Cardfooter">
                 {
                     quantityAdd > 0 ? (  <Link to='/cart' style={{textDecoration:'none'}}>
                                             <button type="button" className="btn btn-sm btn-success w-100" style={{borderRadius:'0'}}>Finalizar compra</button>

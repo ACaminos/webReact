@@ -50,3 +50,9 @@ h6{
     position: absolute;
     bottom: 10%;
 }
+
+.botonVerDetalle{
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

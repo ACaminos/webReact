@@ -4,6 +4,8 @@ import { useCart } from '../../context/CartContext'
 
 const CartItem = ({ id, title, price, category, image, quantity }) => {
 
+  const {removeItem} = useCart()
+
   return (
     <>
         <div className="container p-3 rounded cart">
@@ -21,7 +23,9 @@ const CartItem = ({ id, title, price, category, image, quantity }) => {
                   <div className="d-flex flex-row align-items-center">
                     <span className="d-block stock">{quantity}<span style={{fontSize:'10px'}}>un</span></span>
                     <span className="d-block font-weight-bold price">U$S {price}</span>
-                    <i className="fa fa-trash-o ml-3 text-black-50"></i>
+                    <button className='btn btn-sm btn' onClick={ ()=> removeItem(id)}>
+                      <img src={'/src/assets/trash.png'} style={{width:'32px', height:'32px', backgroundColor:'white'}}/>
+                    </button>
                   </div>
                 </div>
               </div>

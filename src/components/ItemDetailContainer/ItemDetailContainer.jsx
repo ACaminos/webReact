@@ -35,26 +35,16 @@ const ItemDetailContainer = () => {
         .finally( setLoading( false ) )
     }, [itemId])
 
-
-    //   getProductById(itemId)
-    //   .then(res => {
-    //     setProduct(res)
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
-    // }, [itemId])
-
     if(loading) {
       return <h1>Loading...</h1>
   }
 
   return (
-    <>
-        <h2 style={{color:'white'}}>Detalle del producto</h2>
+    <div className='container'>
+        <h4 style={{color:'white', marginTop:'20px'}}>Detalle del producto</h4>
         <hr style={{color:'white'}} />
         <ItemDetail {...product} />
-    </>
+    </div>
   )
 }
 

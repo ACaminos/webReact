@@ -3,10 +3,12 @@
     background-color: #212529!important;
     color: #fff!important;
     border-color: #8a76fc!important;
+    text-decoration: none!important;
 }
 
 .dropdown-menu a{
     color:#fff!important;
+    text-decoration: none!important;
 }
 
 .dropdown-menu a:hover{
@@ -19,8 +21,16 @@
 }
 /* Dropdown Navbar */
 
-
 h1.titleListContainer{
     color: #fff;
     background-color: #212529;
+}
+
+a{
+    color: #fff;
+    text-decoration: none!important;
+}
+
+a:hover{
+    color:#8a76fc!important;
 }

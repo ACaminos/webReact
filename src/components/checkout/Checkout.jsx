@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 import { db } from "../../service/firebase/firebaseConfig"
 import { useForm } from 'react-hook-form'
 
+import './Checkout.css'
+
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const { cart, total, clearCart } = useCart()
@@ -81,31 +83,30 @@ const Checkout = () => {
     )
   }
   return (
-    <>
-      <h1 style={ { color: 'white' } }>Checkout</h1>
-      <h2 style={ { color: 'white' } }>Formulario</h2>
-      <form onSubmit={ handleSubmit( createOrder ) }>
-        <div>
-          <label style={ { color:'white' } }>Nombre:</label>
-          <input type="text" { ...register( "nombre", { required: true }) } />
-          {/* { errors.nombre && <span style={ { color:'white' } }>El nombre es requerido</span> } */}
+    <div className='container'>
+      <h2>Checkout</h2>
+      <hr style={{color:'gray'}} />
+      <h4>Formulario</h4>
+      <div className='row'>
+        <div className='col-6'>
+          <form onSubmit={ handleSubmit( createOrder ) }>
+            <div class="mb-3 mt-3">
+              <label for="formGroupExampleInput" class="form-label nameLabel">Nombre</label>
+              <input type="text" className='form-control form-control-sm' placeholder='Ingrese su nombre' { ...register( "nombre", { required: true }) } />
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label telLabel">Telefono</label>
+              <input type="number" className='form-control form-control-sm telPlaceholder' placeholder='Ingrese su numero de telefono' { ...register( "telefono",{ required: true, pattern: /^[0-9]+$/ } ) } />
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label emailLabel">Email</label>
+              <input type="text" className='form-control form-control-sm' placeholder='Ingrese su correo electronico' { ...register( "email",{ required: true, pattern: /^\S+@\S+$/i } ) } />
+            </div>
+            <button type="submit" class="mt-2 btn btn-sm btn-success">Generar orden de compra</button>
+          </form>
         </div>
-
-        <div>
-          <label style={ { color:'white' } }>Teléfono:</label>
-          <input type="number" { ...register( "telefono",{ required: true, pattern: /^[0-9]+$/ } ) } />
-          {/* { errors.telefono && <span style={ { color:'white' } }>El teléfono es requerido y debe ser numérico</span> } */}
-        </div>
-
-        <div>
-          <label style={ { color:'white' } }>Email:</label>
-          <input type="text" { ...register( "email",{ required: true, pattern: /^\S+@\S+$/i } ) } />
-          {/* { errors.email && <span style={ { color:'white' } }>El correo electrónico es requerido y debe ser válido</span> } */}
-        </div>
-
-        <button type="submit">Generar orden de compra</button>
-      </form>
-    </>
+      </div>
+    </div>
   )
 }
 

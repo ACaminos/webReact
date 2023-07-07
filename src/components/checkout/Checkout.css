@@ -1,0 +1,11 @@
+h2, h4{
+    color: #fff;
+}
+
+label.nameLabel, label.telLabel, label.emailLabel{
+    color: #fff;
+}
+
+input[type=number]{
+    text-align: left!important;
+}

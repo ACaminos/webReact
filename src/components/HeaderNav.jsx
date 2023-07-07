@@ -26,7 +26,6 @@ import '../styles/styles.css'
             <Nav.Link>
               <Link to={'/'}>Home</Link>
             </Nav.Link>
-            <Nav.Link href="#">Pricing</Nav.Link>
             <NavDropdown title="Categories" id="collasible-nav-dropdown" className='bg-dark'>
               <NavDropdown.Item >
                 <NavLink to={'/category/men'}>Men's clothing</NavLink>

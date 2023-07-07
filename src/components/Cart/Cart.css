@@ -1,0 +1,27 @@
+div.colIzq{
+    text-align: left;
+}
+
+div.colIzq h3{
+    color: #fff;
+}
+
+div.colDer{
+    text-align: right;
+}
+
+div.colDer button.btnClean{
+    padding: 0px 10px 0px 10px;
+    margin-right: 10px;
+}
+
+div.colDer button.btnCheck{
+    padding: 0px 10px 0px 10px;
+    margin-left: 10px;
+}
+
+@media (max-width: 575px){
+    div.colDer{
+        text-align: left;
+    }
+}

@@ -1,0 +1,27 @@
+h6.cardTextTitle{
+    text-align: left;
+}
+
+ul.listGroupPadding{
+    padding: 0px 10px 0px 10px;
+}
+
+li.descriptionTitle{
+    font-weight: bold;
+}
+
+li.descriptionContent{
+    font-size: 13px;
+}
+
+.row.RowMargin{
+    margin-bottom: 10px;
+}
+
+.Cardfooter{
+    padding: 0px 0px 20px 0px;
+}
+
+#queOnda{
+    width: 40%!important;
+}

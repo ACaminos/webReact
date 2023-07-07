@@ -23,7 +23,7 @@ const Item = ( { id, title, price, category, image, stock } ) => {
                         </div>
                     </div>
                 </div>
-                <Link to={`/item/${id}`} className="btn btn-sm btn-primary">Ver detalle</Link>
+                <Link to={`/item/${id}`} className="btn btn-sm btn-primary botonVerDetalle">Ver detalle</Link>
             </div>
         </>
     )
