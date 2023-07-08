@@ -1,6 +1,10 @@
 import React from 'react'
-import './cartItem.css'
+
+//Components
 import { useCart } from '../../context/CartContext'
+
+//Styles
+import './cartItem.css'
 
 const CartItem = ({ id, title, price, category, image, quantity }) => {
 

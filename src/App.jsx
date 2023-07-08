@@ -5,12 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from './components/Cart/Cart';
 import { HeaderNav } from './components/HeaderNav'
 import { CartProvider } from './context/CartContext';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { ItemListContainer } from './components/ItemListContainer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Checkout from './components/checkout/Checkout';
+import { ItemListContainer } from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { NotificationProvider } from './components/notification/NotificationService';
 
+//Package
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (

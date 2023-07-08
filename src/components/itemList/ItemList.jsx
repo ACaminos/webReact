@@ -1,3 +1,4 @@
+//Components
 import Item from "../Item/Item"
 
 const ItemList = ({productos}) => {

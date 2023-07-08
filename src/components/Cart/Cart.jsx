@@ -1,7 +1,9 @@
-import React, { useContext } from 'react'
-import { CartContext, useCart } from '../../context/CartContext'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import CartItem from '../cartItem/CartItem'
+import { useCart } from '../../context/CartContext'
+
+//Package
+import { Link } from 'react-router-dom'
 
 //Styles
 import './Cart.css'

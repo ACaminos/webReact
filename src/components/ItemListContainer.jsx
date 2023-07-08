@@ -1,7 +1,9 @@
-//Imports
 import { useEffect, useState } from 'react'
-// import { getProducts, getProductsByCategory } from './mock/mockData'
+
+//Package
 import { useParams } from 'react-router-dom'
+
+//Components
 import ItemList from './itemList/ItemList'
 
 //Firebase

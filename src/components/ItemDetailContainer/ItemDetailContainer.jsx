@@ -3,11 +3,8 @@ import { useEffect, useState } from 'react'
 //Component
 import ItemDetail from '../ItemDetail/ItemDetail'
 
-//Router Dom
+//Package
 import { useParams } from 'react-router-dom'
-
-//Mock Data
-import { getProductById } from '../mock/mockData'
 
 //Firebase
 import { getDoc, doc } from 'firebase/firestore'

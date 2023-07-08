@@ -1,5 +1,7 @@
-import { useContext } from "react";
+//Components
 import { useCart } from "../context/CartContext";
+
+//Package
 import { Link } from "react-router-dom";
 
 export const CardWidget = () => {
