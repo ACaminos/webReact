@@ -25,7 +25,6 @@ Once the installation is done, run the following command to run the project:
   npm run dev
 ```
 
-
 ## Documentation
 
 In case of any doubt, the links of the documentation of the resources used in this project are left.
