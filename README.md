@@ -11,7 +11,12 @@ Install this project with npm ^18
 In the root of the project, go to the terminal and run:
 
 ```bash
-  npm i or npm install
+  npm i
+```
+or
+
+```bash
+  npm install
 ```
 
 Once the installation is done, run the following command to run the project:
